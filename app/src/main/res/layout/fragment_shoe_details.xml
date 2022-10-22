@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.devhch.shoestore.models.Shoe" />
+    </data>
+
+    <!-- I used LinearLayout here to align children vertically. -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_back"
+        android:orientation="vertical"
+        android:padding="@dimen/space20">
+
+        <TextView
+            style="@style/TextBoldStyle"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space20"
+            android:text="@string/add_shoe"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_textview"
+            style="@style/TextBoldStyle"
+            android:layout_marginTop="34dp"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            style="@style/LoginTextInputLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/space20"
+            android:autofillHints=""
+            android:hint="@string/enter_shoe_name"
+            android:inputType="textPersonName"
+            android:text="@={shoe.name}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:id="@+id/shoe_size"
+            style="@style/TextBoldStyle"
+            android:layout_marginTop="16dp"
+            android:text="@string/size"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/size_edit_text"
+            style="@style/LoginTextInputLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/space20"
+            android:autofillHints=""
+            android:hint="@string/enter_shoe_size"
+            android:inputType="numberDecimal"
+            android:text="@={shoe.size}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:id="@+id/company_textview"
+            style="@style/TextBoldStyle"
+            android:text="@string/company"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/company_edit_text"
+            style="@style/LoginTextInputLayout"
+            android:layout_marginBottom="@dimen/space20"
+            android:autofillHints=""
+            android:hint="@string/for_example_nike"
+            android:inputType="text"
+            android:text="@={shoe.company}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:id="@+id/description_textview"
+            style="@style/TextBoldStyle"
+            android:layout_marginTop="16dp"
+            android:text="@string/description"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <EditText
+            android:id="@+id/description_edit_text"
+            style="@style/LoginTextInputLayout"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="34dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:gravity="start|top"
+            android:hint="@string/enter_shoe_description"
+            android:inputType="textMultiLine"
+            android:text="@={shoe.description}"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <!-- I used LinearLayout here to align children horizontally. -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/univia_pro_regular"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_shoe_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:fontFamily="@font/univia_pro_regular"
+                android:text="@string/add_shoe"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="@dimen/space10" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

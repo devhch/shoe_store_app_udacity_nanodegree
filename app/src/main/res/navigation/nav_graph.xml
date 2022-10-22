@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@+id/nav_splash">
+
+    <fragment
+        android:id="@+id/nav_splash"
+        android:name="com.devhch.shoestore.ui.splash.SplashFragment"
+        android:label="@string/fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_nav_splash_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_splash_to_nav_on_boarding"
+            app:destination="@id/nav_onboarding" />
+        <action
+            android:id="@+id/action_nav_splash_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.devhch.shoestore.ui.login.LoginFragment"
+        android:label="@string/fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.devhch.shoestore.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_shoeDetailsFragment"
+            app:destination="@id/nav_shoe_details" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_shoe_details"
+        android:name="com.devhch.shoestore.ui.shoedetails.ShoeDetailsFragment"
+        android:label="Shoe Details"
+        tools:layout="@layout/fragment_shoe_details" />
+
+    <fragment
+        android:id="@+id/nav_onboarding"
+        android:name="com.devhch.shoestore.ui.onboarding.OnBoardingFragment"
+        android:label="OnBoardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_nav_on_boarding_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+
+</navigation>

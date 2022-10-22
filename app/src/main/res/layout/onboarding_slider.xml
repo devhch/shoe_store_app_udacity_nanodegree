@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onBoarding"
+            type="com.devhch.shoestore.models.OnBoarding" />
+    </data>
+
+    <!-- I used LinearLayout here to align children vertically. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:flow_horizontalAlign="center">
+
+        <ImageView
+            android:id="@+id/on_boarding_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/space20"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/space20"
+            android:background="@{onBoarding.image}"
+            android:contentDescription="@string/onboarding_image" />
+
+        <TextView
+            android:id="@+id/on_boarding_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/univia_pro_regular"
+            android:text="@{onBoarding.title}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            tools:text="@string/shoe" />
+
+        <TextView
+            android:id="@+id/on_boarding_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/univia_pro_regular"
+            android:text="@{onBoarding.description}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            tools:text="@string/shoe_description" />
+
+    </LinearLayout>
+
+</layout>

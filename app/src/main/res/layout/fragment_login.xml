@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginFragment"
+            type="com.devhch.shoestore.ui.login.LoginFragment" />
+    </data>
+
+    <!-- I used LinearLayout here to align children vertically. -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_back"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0"
+            android:contentDescription="@string/splash_shoe"
+            android:paddingStart="@dimen/space40"
+            android:paddingEnd="@dimen/space40"
+            android:src="@drawable/splash_shoe" />
+
+        <TextView
+            android:id="@+id/text_splash_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space8"
+            android:layout_marginTop="@dimen/space8"
+            android:layout_marginEnd="@dimen/space8"
+            android:layout_marginBottom="@dimen/space20"
+            android:fontFamily="@font/univia_pro_regular"
+            android:text="@string/splash_title"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_40" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/radius20"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/space10">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <!-- I used LinearLayout here to align children vertically. -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        style="@style/TextBoldStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space20"
+                        android:gravity="center"
+                        android:text="@string/email"
+                        android:textColor="@color/b_dark_blue"
+                        android:textSize="@dimen/text_size_20"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailContainer"
+                        style="@style/LoginTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space8"
+                        android:hint="@string/enter_your_email"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:startIconTint="@color/b_dark_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="emailAddress"
+                            android:imeOptions="actionNext"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/b_dark_blue"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/text_view_password"
+                        style="@style/TextBoldStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space20"
+                        android:gravity="center"
+                        android:text="@string/password"
+                        android:textColor="@color/b_dark_blue"
+                        android:textSize="@dimen/text_size_20"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordContainer"
+                        style="@style/LoginTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space8"
+                        android:hint="@string/enter_your_password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/emailContainer"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTintMode="@color/b_dark_blue"
+                        app:startIconDrawable="@drawable/ic_password"
+                        app:startIconTint="@color/b_dark_blue">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/dark_blue"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/login_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space20"
+                        android:backgroundTint="@color/b_dark_blue"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/login"
+                        android:textAllCaps="true"
+                        android:textSize="14sp"
+                        app:cornerRadius="@dimen/radius10" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/logging_with_an_existing_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/space10"
+                        android:layout_marginTop="@dimen/space20"
+                        android:backgroundTint="@color/light_blue"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/login_existing_account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:cornerRadius="@dimen/radius10"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
